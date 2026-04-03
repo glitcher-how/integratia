@@ -1,0 +1,15 @@
+# components
+- components/
+  - README.MD
+  - dummy_component/
+    - Makefile
+    - __init__.py
+    - __main__.py
+    - docker/
+      - Dockerfile
+    - src/
+      - __init__.py
+      - dummy_component.py
+    - tests/
+      - __init__.py
+      - test_dummy_component.py

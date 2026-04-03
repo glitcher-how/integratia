@@ -1,0 +1,16 @@
+# docs
+- docs/
+  - competition.md
+  - concept.md
+  - e2e-test-scenarios.md
+  - qualification_contest.md
+  - qualification_course.md
+  - quick_start.md
+  - requirements_spec.md
+  - team_work.md
+  - images/
+    - dev_workflow.png
+    - dev_workflow_b.png
+  - lab_works/
+    - lab_works_dev.md
+    - lab_works_infosec.md

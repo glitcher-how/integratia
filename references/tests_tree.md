@@ -1,0 +1,22 @@
+# tests
+- tests/
+  - __init__.py
+  - e2e/
+    - __init__.py
+    - analytics-compose.yml
+    - conftest.py
+    - test_e2e_scenario.py
+    - secrets/
+      - backend.yaml
+  - integration/
+    - __init__.py
+    - test_broker_integration.py
+  - unit/
+    - __init__.py
+    - test_base_component.py
+    - test_base_gateway.py
+    - test_base_system.py
+    - test_broker_config.py
+    - test_broker_factory.py
+    - test_safe_bus.py
+    - test_sdk_messages.py

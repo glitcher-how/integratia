@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    options {
+        timeout(time: 30, unit: 'MINUTES')
+        timestamps()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+                sh 'git submodule update --init --recursive'
+            }
+        }
+
+        stage('Init') {
+            steps {
+                sh 'command -v pipenv >/dev/null 2>&1 || pip install pipenv'
+                sh 'PIPENV_PIPFILE=config/Pipfile pipenv install --dev'
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                sh 'make ci-unit-test'
+            }
+        }
+
+        stage('Integration Tests') {
+            steps {
+                sh 'make ci-integration-test'
+            }
+        }
+
+        stage('E2E Tests') {
+            steps {
+                sh 'make e2e-up'
+                sh 'make e2e-test'
+            }
+            post {
+                always {
+                    sh 'make e2e-logs || true'
+                    sh 'make e2e-down || true'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'make docker-down || true'
+            sh '''
+                for sys in systems/*/; do
+                    [ -f "$sys/Makefile" ] && make -C "$sys" docker-down PROJECT_ROOT="$(pwd)" 2>/dev/null || true
+                done
+            '''
+        }
+    }
+}

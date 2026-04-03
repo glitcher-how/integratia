@@ -1,0 +1,1 @@
+Broken symlink in source snapshot. Original target: ../vendor/mk2-cooperated/systems/operator

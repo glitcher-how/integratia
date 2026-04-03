@@ -1,0 +1,15 @@
+# sdk
+- sdk/
+  - __init__.py
+  - analytics_journal.py
+  - base_component.py
+  - base_gateway.py
+  - base_system.py
+  - journal_runner.py
+  - messages.py
+  - safe_bus.py
+  - security_monitor.py
+  - topic_naming.py
+  - topic_utils.py
+  - journal_docker/
+    - Dockerfile

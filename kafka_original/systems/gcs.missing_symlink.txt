@@ -1,0 +1,1 @@
+Broken symlink in source snapshot. Original target: ../vendor/DronePortGCS/systems/gcs

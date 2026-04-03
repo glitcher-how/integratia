@@ -1,0 +1,14 @@
+# docker
+- docker/
+  - README.md
+  - docker-compose.yml
+  - example.env
+  - kafka/
+    - entrypoint.sh
+  - mqtt/
+    - entrypoint.sh
+    - mosquitto.conf
+  - resources/
+    - .gitkeep
+  - test/
+    - .gitkeep
